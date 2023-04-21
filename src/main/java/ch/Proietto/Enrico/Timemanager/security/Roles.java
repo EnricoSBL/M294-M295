@@ -1,4 +1,4 @@
-package ch.ilv.m295.demoapp.security;
+package ch.Proietto.Enrico.Timemanager.security;
 
 public class Roles {
     public static final String Admin = "admin";

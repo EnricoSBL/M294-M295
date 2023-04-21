@@ -1,4 +1,4 @@
-package ch.ilv.m295.demoapp.storage;
+package ch.Proietto.Enrico.Timemanager.storage;
 
 import org.springframework.boot.jdbc.DataSourceBuilder;
 

@@ -1,4 +1,4 @@
-package ch.ilv.m295.demoapp.security;
+package ch.Proietto.Enrico.Timemanager.security;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
@@ -19,15 +19,15 @@ public class AuthenticationRoleConverter implements Converter<Jwt, AbstractAuthe
 
     public AuthenticationRoleConverter() {
         defaultGrantedAuthoritiesConverter.setAuthoritiesClaimName("roles");
-        defaultGrantedAuthoritiesConverter.setAuthorityPrefix("ROLE_");
+        defaultGrantedAuthoritiesConverter.setAuthorityPrefix("RO_");
     }
 
     private static Collection<? extends GrantedAuthority> extractResourceRoles(final Jwt jwt) {
         Map<String, Object> resourceAccess = jwt.getClaim("resource_access");
         Collection<String> resourceRoles;
         if (resourceAccess != null) {
-            Map<String, Collection<String>> demoapp = (Map<String, Collection<String>>) resourceAccess.get("demoapp");
-          if ((resourceRoles = demoapp.get("roles")) != null) {
+            Map<String, Collection<String>> timemanager = (Map<String, Collection<String>>) resourceAccess.get("timemanager");
+          if ((resourceRoles = timemanager.get("roles")) != null) {
               return resourceRoles.stream()
                       .map(SimpleGrantedAuthority::new)
                       .collect(Collectors.toSet());

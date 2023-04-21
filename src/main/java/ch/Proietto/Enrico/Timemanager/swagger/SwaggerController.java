@@ -1,4 +1,4 @@
-package ch.ilv.m295.demoapp.swagger;
+package ch.Proietto.Enrico.Timemanager.swagger;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

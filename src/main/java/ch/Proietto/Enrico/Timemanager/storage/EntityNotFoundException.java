@@ -1,4 +1,4 @@
-package ch.ilv.m295.demoapp.storage;
+package ch.Proietto.Enrico.Timemanager.storage;
 
 public class EntityNotFoundException extends RuntimeException {
 
