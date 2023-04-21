@@ -25,14 +25,10 @@ public class Employee {
     @NotEmpty
     private String lastname;
 
-
+    @Column(nullable = false)
+    private int age;
 
     @Column(nullable = false)
-    @NotEmpty
-    private LocalTime worktime;
-
-    @Column(nullable = false)
-    @NotEmpty
     private boolean manager;
 
     public Employee(){

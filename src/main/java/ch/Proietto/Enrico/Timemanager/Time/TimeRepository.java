@@ -1,4 +1,6 @@
-package ch.ilv.m295.demoapp.Time;
+package ch.Proietto.Enrico.Timemanager.Time;
 
-public interface TimeRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TimeRepository extends JpaRepository<Time, Long> {
 }
