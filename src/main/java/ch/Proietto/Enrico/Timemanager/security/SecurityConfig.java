@@ -1,4 +1,4 @@
-package ch.ilv.m295.demoapp.security;
+package ch.Proietto.Enrico.Timemanager.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

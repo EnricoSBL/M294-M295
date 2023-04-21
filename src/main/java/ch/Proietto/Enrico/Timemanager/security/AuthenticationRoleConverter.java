@@ -1,4 +1,4 @@
-package ch.ilv.m295.demoapp.security;
+package ch.Proietto.Enrico.Timemanager.security;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
@@ -19,7 +19,7 @@ public class AuthenticationRoleConverter implements Converter<Jwt, AbstractAuthe
 
     public AuthenticationRoleConverter() {
         defaultGrantedAuthoritiesConverter.setAuthoritiesClaimName("roles");
-        defaultGrantedAuthoritiesConverter.setAuthorityPrefix("ROLE_");
+        defaultGrantedAuthoritiesConverter.setAuthorityPrefix("RO_");
     }
 
     private static Collection<? extends GrantedAuthority> extractResourceRoles(final Jwt jwt) {

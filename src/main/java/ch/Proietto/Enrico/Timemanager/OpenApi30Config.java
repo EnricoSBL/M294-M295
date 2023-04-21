@@ -1,4 +1,4 @@
-package ch.ilv.m295.demoapp;
+package ch.Proietto.Enrico.Timemanager;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
