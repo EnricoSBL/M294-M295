@@ -32,6 +32,9 @@ public class DepartmentService {
         return repository.findById(id)
                 .map(employeeOrig -> {
                     employeeOrig.setName(department.getName());
+                    employeeOrig.setAmountOfEmployees(department.getAmountOfEmployees());
+                    employeeOrig.setEmployees(department.getEmployees());
+                    employeeOrig.setManager(department.getManager());
                     return repository.save(employeeOrig);
                 })
                 .orElseGet(() -> repository.save(department));

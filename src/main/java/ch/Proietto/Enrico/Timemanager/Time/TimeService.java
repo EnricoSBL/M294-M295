@@ -30,7 +30,10 @@ public class TimeService {
     public Time updateTime(Time time, Long id) {
         return repository.findById(id)
                 .map(TimeOG -> {
+                    TimeOG.setEmployees(time.getEmployees());
                     TimeOG.setStartTime(time.getStartTime());
+                    TimeOG.setEndTime(time.getEndTime());
+                    TimeOG.setComment(time.getComment());
                     return repository.save(TimeOG);
                 })
                 .orElseGet(() -> repository.save(time));
