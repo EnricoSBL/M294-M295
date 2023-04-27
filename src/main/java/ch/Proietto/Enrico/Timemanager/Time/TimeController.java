@@ -26,7 +26,7 @@ public class TimeController {
     }
 
     @GetMapping("api/Time")
-    @RolesAllowed(Roles.Read)
+    @RolesAllowed(Roles.ReadTime)
     public ResponseEntity<List<Time>> all() {
         List<Time> result = timeService.getTime();
         return new ResponseEntity<>(result, HttpStatus.OK);
