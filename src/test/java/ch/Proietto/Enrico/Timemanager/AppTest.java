@@ -1,4 +1,4 @@
-package ch.ilv.m295.demoapp;
+package ch.Proietto.Enrico.Timemanager;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
