@@ -33,5 +33,11 @@ public class Employee {
 
     public Employee(){
     }
+    public Employee(String firstname, String lastname, int age, boolean manager){
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.age = age;
+        this.manager = manager;
+    }
 
 }
