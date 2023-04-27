@@ -5,6 +5,9 @@ spring:
     generate-ddl: true
     hibernate:
       ddl-auto: update
+  output:
+    ansi:
+      enabled: always
   datasource:
     url: jdbc:postgresql://localhost:5432/m-295-app
     username: postgres
