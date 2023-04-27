@@ -1,5 +1,6 @@
 package ch.Proietto.Enrico.Timemanager.Time;
 
+import ch.Proietto.Enrico.Timemanager.Employee.Employee;
 import ch.Proietto.Enrico.Timemanager.Project.Project;
 import ch.Proietto.Enrico.Timemanager.Project.ProjectRepository;
 import ch.Proietto.Enrico.Timemanager.storage.EntityNotFoundException;
@@ -30,7 +31,10 @@ public class TimeService {
     public Time updateTime(Time time, Long id) {
         return repository.findById(id)
                 .map(TimeOG -> {
+                    TimeOG.setEmployee(time.getEmployee());
                     TimeOG.setStartTime(time.getStartTime());
+                    TimeOG.setEndTime(time.getEndTime());
+                    TimeOG.setComment(time.getComment());
                     return repository.save(TimeOG);
                 })
                 .orElseGet(() -> repository.save(time));

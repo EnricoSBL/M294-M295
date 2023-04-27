@@ -19,7 +19,7 @@ public class AuthenticationRoleConverter implements Converter<Jwt, AbstractAuthe
 
     public AuthenticationRoleConverter() {
         defaultGrantedAuthoritiesConverter.setAuthoritiesClaimName("roles");
-        defaultGrantedAuthoritiesConverter.setAuthorityPrefix("RO_");
+        defaultGrantedAuthoritiesConverter.setAuthorityPrefix("ROLE");
     }
 
     private static Collection<? extends GrantedAuthority> extractResourceRoles(final Jwt jwt) {

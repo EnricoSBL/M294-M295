@@ -17,7 +17,7 @@ public class Time {
 
     @ManyToMany
     @JoinColumn(name = "employee_id")
-    private List<Employee> employees;
+    private List<Employee> employee;
 
     @Column(nullable = false)
     private Date startTime;
