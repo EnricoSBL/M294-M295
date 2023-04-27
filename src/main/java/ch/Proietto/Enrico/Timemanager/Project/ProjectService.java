@@ -32,6 +32,10 @@ public class ProjectService {
         return repository.findById(id)
                 .map(projectOG -> {
                     projectOG.setName(project.getName());
+                    projectOG.setDescription(project.getDescription());
+                    projectOG.setWorkers(project.getWorkers());
+                    projectOG.setProjectOwner(project.getProjectOwner());
+                    projectOG.setDueDate(project.getDueDate());
                     return repository.save(projectOG);
                 })
                 .orElseGet(() -> repository.save(project));
