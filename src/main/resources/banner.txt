@@ -1,0 +1,8 @@
+${AnsiColor.GREEN}.------.${AnsiColor.RED}.------.${AnsiColor.BLUE}.------.${AnsiColor.GREEN}.------.${AnsiColor.RED}.------.${AnsiColor.BLUE}.------.${AnsiColor.GREEN}.------.${AnsiColor.RED}.------.${AnsiColor.BLUE}.------.${AnsiColor.GREEN}.------.${AnsiColor.RED}.------.
+${AnsiColor.GREEN}|T.--. |${AnsiColor.RED}|I.--. |${AnsiColor.BLUE}|M.--. |${AnsiColor.GREEN}|E.--. |${AnsiColor.RED}|M.--. |${AnsiColor.BLUE}|A.--. |${AnsiColor.GREEN}|N.--. |${AnsiColor.RED}|A.--. |${AnsiColor.BLUE}|G.--. |${AnsiColor.GREEN}|E.--. |${AnsiColor.RED}|R.--. |
+${AnsiColor.GREEN}| :/\: |${AnsiColor.RED}| (\/) |${AnsiColor.BLUE}| (\/) |${AnsiColor.GREEN}| (\/) |${AnsiColor.RED}| (\/) |${AnsiColor.BLUE}| (\/) |${AnsiColor.GREEN}| :(): |${AnsiColor.RED}| (\/) |${AnsiColor.BLUE}| :/\: |${AnsiColor.GREEN}| (\/) |${AnsiColor.RED}| :(): |
+${AnsiColor.GREEN}| (__) |${AnsiColor.RED}| :\/: |${AnsiColor.BLUE}| :\/: |${AnsiColor.GREEN}| :\/: |${AnsiColor.RED}| :\/: |${AnsiColor.BLUE}| :\/: |${AnsiColor.GREEN}| ()() |${AnsiColor.RED}| :\/: |${AnsiColor.BLUE}| :\/: |${AnsiColor.GREEN}| :\/: |${AnsiColor.RED}| ()() |
+${AnsiColor.GREEN}| '--'T|${AnsiColor.RED}| '--'I|${AnsiColor.BLUE}| '--'M|${AnsiColor.GREEN}| '--'E|${AnsiColor.RED}| '--'M|${AnsiColor.BLUE}| '--'A|${AnsiColor.GREEN}| '--'N|${AnsiColor.RED}| '--'A|${AnsiColor.BLUE}| '--'G|${AnsiColor.GREEN}| '--'E|${AnsiColor.RED}| '--'R|
+${AnsiColor.GREEN}`------'${AnsiColor.RED}`------'${AnsiColor.BLUE}`------'${AnsiColor.GREEN}`------'${AnsiColor.RED}`------'${AnsiColor.BLUE}`------'${AnsiColor.GREEN}`------'${AnsiColor.RED}`------'${AnsiColor.BLUE}`------'${AnsiColor.GREEN}`------'${AnsiColor.RED}`------'
+${AnsiColor.DEFAULT}
+
