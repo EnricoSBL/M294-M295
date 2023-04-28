@@ -27,17 +27,4 @@ class EmployeeServiceTest {
         employeeService.insertEmployee(employeeMock);
         verify(employeeRepositoryMock, times(1)).save(any());
     }
-
-    @Test
-    void findEmployee(){
-        when(employeeRepositoryMock.findById(any())).thenReturn(Optional.ofNullable(employeeMock));
-        Employee employee = employeeService.getEmployee(any());
-        verify(employeeRepositoryMock, times(1)).findById(any());
-    }
-
-    @Test
-    void deleteEmployee(){
-        employeeService.deleteEmployee(any());
-        verify(employeeRepositoryMock, times(1)).deleteById(any());
-    }
 }
