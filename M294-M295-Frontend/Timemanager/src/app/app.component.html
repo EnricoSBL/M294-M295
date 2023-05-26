@@ -1,0 +1,47 @@
+<mat-toolbar>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item [routerLink]="['']">
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </button>
+    <button mat-menu-item [routerLink]="['employees']">
+      <mat-icon>person_pin</mat-icon>
+      <span>Employee</span>
+    </button>
+    <button mat-menu-item [routerLink]="['departments']">
+      <mat-icon>work</mat-icon>
+      <span>Department</span>
+    </button>
+    <button mat-menu-item [routerLink]="['projects']">
+      <mat-icon>assignment</mat-icon>
+      <span>Projects</span>
+    </button>
+    <button mat-menu-item [routerLink]="['times']">
+      <mat-icon>av_timer</mat-icon>
+      <span>Time</span>
+    </button>
+  </mat-menu>
+
+  <span>Timemanager</span>
+
+  <span class="toolbar__spacer"></span>
+
+  <small>{{ pagetitle }}</small>
+
+  <app-login></app-login>
+
+  <span class="toolbar__spacer"></span>
+
+</mat-toolbar>
+
+<main class="container">
+  <div class="container__section">
+
+    <router-outlet></router-outlet>
+
+  </div>
+</main>

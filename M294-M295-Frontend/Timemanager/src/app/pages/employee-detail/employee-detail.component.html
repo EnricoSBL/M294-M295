@@ -1,0 +1,33 @@
+<div>
+
+  <h3>Details {{ employee.firstname }}</h3>
+
+  <form (ngSubmit)="save(employeeForm.value)" [formGroup]="employeeForm">
+
+      <mat-form-field>
+        <mat-label>Firstname</mat-label>
+        <input type="text" formControlName="firstname" matInput required />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Lastname</mat-label>
+        <input type="text" formControlName="lastname" matInput required />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Age</mat-label>
+        <input type="text" formControlName="age" matInput required />
+      </mat-form-field>
+
+      <label for="multiplayer">Manager</label>
+      <mat-radio-group id="manager" formControlName="multiplayer">
+        <mat-radio-button [value]="true">Yes</mat-radio-button>
+        <mat-radio-button [value]="false">No</mat-radio-button>
+      </mat-radio-group>
+
+      <button mat-flat-button color="disabled" type="reset" (click)="back()">Abbrechen</button>
+      <button mat-raised-button color="primary" type="submit">Speichern</button>
+
+  </form>
+
+</div>
