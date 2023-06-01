@@ -34,6 +34,9 @@ import { TimeDetailComponent } from './pages/time-detail/time-detail.component';
 import { environment } from './environments/environment';
 import { AppAuthGuard } from './guard/app.auth.guard';
 import { AppAuthService } from './service/app.auth.service';
+import { IsInRolesDirective } from './directives/is-in-roles.dir';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 export const authConfig: AuthConfig = {
   issuer: 'http://172.17.255.42:8080/realms/ILV',
@@ -66,7 +69,8 @@ export function storageFactory(): OAuthStorage {
     ProjectListComponent,
     ProjectDetailComponent,
     TimeListComponent,
-    TimeDetailComponent
+    TimeDetailComponent,
+    IsInRolesDirective
   ],
   imports: [
     BrowserModule,
@@ -96,6 +100,8 @@ export function storageFactory(): OAuthStorage {
     MatMenuModule,
     NoopAnimationsModule,
     MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [
     {

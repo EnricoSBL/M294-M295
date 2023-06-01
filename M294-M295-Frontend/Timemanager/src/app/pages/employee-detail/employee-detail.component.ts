@@ -43,7 +43,7 @@ export class EmployeeDetailComponent implements OnInit {
   }
 
   async back () {
-    await this.router.navigate(['games'])
+    await this.router.navigate(['employees'])
   }
 
   public save(formData: any){

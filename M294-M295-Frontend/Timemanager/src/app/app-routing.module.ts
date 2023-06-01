@@ -56,7 +56,7 @@ const routes: Routes = [
       roles: [
         AppRoles.Read
       ],
-        pagetitel: 'Employee'
+        pagetitel: 'Departments'
     }
   },
   {

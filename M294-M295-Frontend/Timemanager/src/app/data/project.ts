@@ -6,5 +6,5 @@ export class Project {
   public description : string = ''
   public workers : Array<Employee> = []
   public projectOwner : Employee = new Employee()
-  public dueTime : Date = new Date()
+  public dueDate : Date = new Date()
 }

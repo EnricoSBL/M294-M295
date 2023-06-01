@@ -23,13 +23,13 @@
       <th *matHeaderCellDef class="w-75 th-center" mat-header-cell></th>
       <td *matCellDef="let element" mat-cell style="text-align: end">
         <button
-          *isInRoles="[roles.Update]"
+        *isInRoles="[roles.Update]"
           (click)="edit(element)"
           color="primary" mat-icon-button>
           <mat-icon>edit</mat-icon>
         </button>
         <button
-          *isInRoles="[roles.Admin]"
+        *isInRoles="[roles.Admin]"
           (click)="delete(element)"
           color="warn" mat-icon-button>
           <mat-icon>delete</mat-icon>
@@ -43,12 +43,12 @@
   </table>
 
   <button
-    *isInRoles="[roles.Admin]"
+  *isInRoles="[roles.Admin]"
     (click)="add()"
     mat-raised-button
     color="primary">
     <mat-icon>add</mat-icon>
-    Spiel erfassen
+    New Employee
   </button>
 
 </div>

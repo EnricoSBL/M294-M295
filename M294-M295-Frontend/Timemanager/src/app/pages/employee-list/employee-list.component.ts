@@ -15,7 +15,7 @@ import { EmployeeService } from 'src/app/service/employee.service';
 export class EmployeeListComponent implements OnInit {
 
   public employeeDataSource = new MatTableDataSource<Employee>()
-  public columns = ['firstname','lastname','age','manager']
+  public columns = ['firstname','lastname','age','manager','actions']
   public roles = AppRoles
 
   constructor (
@@ -36,11 +36,11 @@ export class EmployeeListComponent implements OnInit {
   }
 
   async edit (obj:Employee) {
-    await this.router.navigate(['game', obj.id])
+    await this.router.navigate(['employee', obj.id])
   }
 
   async add () {
-    await this.router.navigate(['game'])
+    await this.router.navigate(['employee'])
   }
 
   delete (obj:Employee) {

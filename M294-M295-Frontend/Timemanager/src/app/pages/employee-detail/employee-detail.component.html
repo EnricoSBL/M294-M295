@@ -1,6 +1,6 @@
 <div>
 
-  <h3>Details {{ employee.firstname }}</h3>
+  <h2>Details {{ employee.firstname + " " + employee.lastname }}</h2>
 
   <form (ngSubmit)="save(employeeForm.value)" [formGroup]="employeeForm">
 
