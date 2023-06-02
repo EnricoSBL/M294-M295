@@ -5,13 +5,13 @@
     <div>
     <mat-form-field>
       <mat-label>Name</mat-label>
-      <input type="text" formControlName="name" matInput required />
+      <input type="text" formControlName="name" minlength="1" maxlength="50" matInput required />
     </mat-form-field>
   </div>
   <div>
     <mat-form-field>
       <mat-label>Amount of employees</mat-label>
-      <input type="number" formControlName="amountOfEmployees" matInput required />
+      <input type="number" formControlName="amountOfEmployees" min="1" max="100" matInput required />
     </mat-form-field>
   </div>
   <div>
