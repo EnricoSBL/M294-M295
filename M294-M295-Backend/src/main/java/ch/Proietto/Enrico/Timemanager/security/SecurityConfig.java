@@ -48,7 +48,7 @@ public class SecurityConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH", "OPTIONS")
-                        .allowedOrigins("http://localhost:4200");
+                        .allowedOrigins("http://172.17.255.42:4200");
             }
         };
     }

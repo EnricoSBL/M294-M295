@@ -1,0 +1,53 @@
+<h2>Details {{ department.name }}</h2>
+<div>
+
+  <form (ngSubmit)="save(departmentForm.value)" [formGroup]="departmentForm">
+    <div>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input type="text" formControlName="name" matInput required />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Amount of employees</mat-label>
+      <input type="number" formControlName="amountOfEmployees" matInput required />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Employees</mat-label>
+      <mat-select multiple
+        formControlName="employees" matInput required
+        [compareWith]="compareOptions">
+        <mat-option
+          *ngFor="let employee of employees"
+          [value]="employee">
+          {{ employee.firstname + " " + employee.lastname}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Manager</mat-label>
+      <mat-select
+        formControlName="manager" matInput required
+        [compareWith]="compareOptions">
+        <div *ngFor="let manager of manager">
+        <mat-option
+          *ngIf="manager.manager"
+          [value]="manager">
+            {{ manager.firstname +" " +  manager.lastname}}
+        </mat-option>
+      </div>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-flat-button color="disabled" type="reset" (click)="back()">Abbrechen</button>
+    <button mat-raised-button color="primary" type="submit">Speichern</button>
+  </div>
+</form>
+
+</div>

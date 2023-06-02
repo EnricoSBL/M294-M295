@@ -1,0 +1,77 @@
+<h2>Details {{ time.employee.firstname + " " + time.employee.lastname }}</h2>
+
+<div>
+  <form (ngSubmit)="save(timeForm.value)" [formGroup]="timeForm">
+    <div>
+    <mat-form-field>
+      <mat-label>Employee</mat-label>
+      <mat-select
+        formControlName="employee" matInput required
+        [compareWith]="compareOptions">
+        <mat-option
+          *ngFor="let employee of employee"
+          [value]="employee">
+          {{ employee.firstname + " " + employee.lastname}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+<div>
+    <mat-form-field>
+      <mat-label>Department</mat-label>
+      <mat-select
+        formControlName="department" matInput required
+        [compareWith]="compareOptions">
+        <mat-option
+          *ngFor="let department of department"
+          [value]="department">
+          {{ department.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+<div>
+    <mat-form-field>
+      <mat-label>Projects</mat-label>
+      <mat-select multiple
+        formControlName="projects" matInput required
+        [compareWith]="compareOptions">
+        <mat-option
+          *ngFor="let project of projects"
+          [value]="project">
+          {{ project.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+<div>
+    <mat-form-field>
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="pickerStart" formControlName="startTime" matInput required>
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="pickerStart"></mat-datepicker-toggle>
+      <mat-datepicker #pickerStart></mat-datepicker>
+    </mat-form-field>
+  </div>
+<div>
+    <mat-form-field>
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="pickerEnd" formControlName="endTime" matInput required>
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+      <mat-datepicker #pickerEnd></mat-datepicker>
+    </mat-form-field>
+  </div>
+<div>
+    <mat-form-field>
+      <mat-label>Comment</mat-label>
+      <input type="text" formControlName="comment" matInput/>
+    </mat-form-field>
+  </div>
+<div>
+    <button mat-flat-button color="disabled" type="reset" (click)="back()">Abbrechen</button>
+    <button mat-raised-button color="primary" type="submit">Speichern</button>
+  </div>
+  </form>
+
+</div>

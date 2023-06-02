@@ -1,0 +1,58 @@
+<div>
+
+  <table mat-table [dataSource]="departmentDataSource">
+
+  <mat-text-column name="name" headerText="Name">
+  </mat-text-column>
+
+  <mat-text-column name="amountOfEmployees" headerText="Amount of Employees">
+  </mat-text-column>
+
+  <ng-container matColumnDef="employees">
+    <th *matHeaderCellDef mat-header-cell>Employees</th>
+    <td *matCellDef="let element" mat-cell>
+      <mat-chip-set>
+        <mat-chip *ngFor="let employee of element.employees">{{employee.firstname + " " + employee.lastname}}</mat-chip>
+      </mat-chip-set>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="manager">
+    <th *matHeaderCellDef mat-header-cell>Manager</th>
+    <td *matCellDef="let element" mat-cell> {{element.manager ? element.manager.firstname + " " + element.manager.lastname : ''}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="actions">
+    <th *matHeaderCellDef class="w-75 th-center" mat-header-cell></th>
+    <td *matCellDef="let element" mat-cell style="text-align: end">
+      <button
+      *isInRoles="[roles.Admin]"
+        (click)="edit(element)"
+        color="primary" mat-icon-button>
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button
+      *isInRoles="[roles.Admin]"
+        (click)="delete(element)"
+        color="warn" mat-icon-button>
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr *matHeaderRowDef="columns" mat-header-row></tr>
+  <tr *matRowDef="let row; columns: columns;" mat-row></tr>
+
+</table>
+
+<button
+  *isInRoles="[roles.Admin]"
+    (click)="add()"
+    mat-raised-button
+    color="primary">
+    <mat-icon>add</mat-icon>
+    New Department
+  </button>
+
+</div>

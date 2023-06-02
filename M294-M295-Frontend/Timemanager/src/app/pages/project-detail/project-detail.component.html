@@ -1,0 +1,60 @@
+<h2>Details {{ project.name }}</h2>
+<div>
+<form (ngSubmit)="save(projectForm.value)" [formGroup]="projectForm">
+
+<div>
+<mat-form-field>
+  <mat-label>Project name</mat-label>
+  <input type="text" formControlName="name" matInput required />
+</mat-form-field>
+</div>
+<div>
+<mat-form-field>
+  <mat-label>description</mat-label>
+  <input type="text" formControlName="description" matInput required />
+</mat-form-field>
+</div>
+<div>
+<mat-form-field>
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker" formControlName="dueDate" matInput required>
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+</div>
+<div>
+<mat-form-field>
+  <mat-label>Project Owner</mat-label>
+  <mat-select
+    formControlName="projectOwner" matInput required
+    [compareWith]="compareOptions">
+    <mat-option
+      *ngFor="let projectOwner of projectOwner"
+      [value]="projectOwner">
+      {{ projectOwner.firstname + " " + projectOwner.lastname}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+</div>
+<div>
+<mat-form-field>
+  <mat-label>Workers</mat-label>
+  <mat-select multiple
+    formControlName="workers" matInput required
+    [compareWith]="compareOptions">
+    <mat-option
+      *ngFor="let workers of workers"
+      [value]="workers">
+      {{ workers.firstname + " " + workers.lastname}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+</div>
+<div>
+<button mat-flat-button color="disabled" type="reset" (click)="back()">Abbrechen</button>
+<button mat-raised-button color="primary" type="submit">Speichern</button>
+</div>
+
+</form>
+</div>

@@ -1,0 +1,57 @@
+<div>
+
+  <table mat-table [dataSource]="employeeDataSource">
+
+    <mat-text-column name="firstname" headerText="Vorname">
+    </mat-text-column>
+
+    <mat-text-column name="lastname" headerText="Nachname">
+    </mat-text-column>
+
+    <mat-text-column name="age" headerText="Alter">
+    </mat-text-column>
+
+    <ng-container matColumnDef="manager">
+      <th *matHeaderCellDef mat-header-cell>Manager</th>
+      <td *matCellDef="let element" mat-cell>
+        <mat-icon *ngIf="element.manager" style="color: green">check_circle</mat-icon>
+        <mat-icon *ngIf="!element.manager" style="color: gray">radio_button_unchecked</mat-icon>
+       </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th *matHeaderCellDef class="w-75 th-center" mat-header-cell></th>
+      <td *matCellDef="let element" mat-cell style="text-align: end">
+        <button
+        *isInRoles="[roles.Admin]"
+          (click)="edit(element)"
+          color="primary" mat-icon-button>
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+        *isInRoles="[roles.Admin]"
+          (click)="delete(element)"
+          color="warn" mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr *matHeaderRowDef="columns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: columns;" mat-row></tr>
+
+  </table>
+
+  <button
+  *isInRoles="[roles.Admin]"
+    (click)="add()"
+    mat-raised-button
+    color="primary">
+    <mat-icon>add</mat-icon>
+    New Employee
+  </button>
+
+</div>
+
+
+

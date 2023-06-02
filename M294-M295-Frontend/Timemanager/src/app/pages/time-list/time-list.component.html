@@ -1,0 +1,74 @@
+<div>
+
+  <table mat-table [dataSource]="timeDataSource">
+
+    <ng-container matColumnDef="employee">
+      <th *matHeaderCellDef mat-header-cell>Employee</th>
+      <td *matCellDef="let element" mat-cell>
+        <mat-chip-set>
+          <mat-chip>{{element.employee.firstname + " " + element.employee.lastname}}</mat-chip>
+        </mat-chip-set>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="department">
+      <th *matHeaderCellDef mat-header-cell>Department</th>
+      <td *matCellDef="let element" mat-cell>
+        <mat-chip-set>
+          <mat-chip>{{element.department.name}}</mat-chip>
+        </mat-chip-set>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="project">
+      <th *matHeaderCellDef mat-header-cell>Project</th>
+      <td *matCellDef="let element" mat-cell>
+        <mat-chip-set>
+          <mat-chip *ngFor="let project of element.projects">{{project.name}}</mat-chip>
+        </mat-chip-set>
+      </td>
+    </ng-container>
+
+    <mat-text-column name="startTime" headerText="Start time">
+    </mat-text-column>
+
+    <mat-text-column name="endTime" headerText="End time">
+    </mat-text-column>
+
+    <mat-text-column name="comment" headerText="comment">
+    </mat-text-column>
+
+    <ng-container matColumnDef="actions">
+      <th *matHeaderCellDef class="w-75 th-center" mat-header-cell></th>
+      <td *matCellDef="let element" mat-cell style="text-align: end">
+        <button
+        *isInRoles="[roles.Admin]"
+          (click)="edit(element)"
+          color="primary" mat-icon-button>
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+        *isInRoles="[roles.Admin]"
+          (click)="delete(element)"
+          color="warn" mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr *matHeaderRowDef="columns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: columns;" mat-row></tr>
+
+  </table>
+
+  <button
+  *isInRoles="[roles.Admin]"
+    (click)="add()"
+    mat-raised-button
+    color="primary">
+    <mat-icon>add</mat-icon>
+    New Project
+  </button>
+
+
+</div>

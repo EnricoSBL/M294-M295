@@ -1,0 +1,60 @@
+<div>
+
+  <table mat-table [dataSource]="projectDataSource">
+
+    <mat-text-column name="name" headerText="Project name">
+    </mat-text-column>
+
+    <mat-text-column name="description" headerText="Description">
+    </mat-text-column>
+
+    <mat-text-column name="dueDate" headerText="Due Date">
+    </mat-text-column>
+
+  <ng-container matColumnDef="project_Owner">
+    <th *matHeaderCellDef mat-header-cell>Project owner</th>
+    <td *matCellDef="let element" mat-cell> {{element.projectOwner ? element.projectOwner.firstname + " " + element.projectOwner.lastname : ''}} </td>
+  </ng-container>
+
+    <ng-container matColumnDef="workers">
+      <th *matHeaderCellDef mat-header-cell>Workers</th>
+      <td *matCellDef="let element" mat-cell>
+        <mat-chip-set>
+          <mat-chip *ngFor="let workers of element.workers">{{workers.firstname + " " + workers.lastname}}</mat-chip>
+        </mat-chip-set>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th *matHeaderCellDef class="w-75 th-center" mat-header-cell></th>
+      <td *matCellDef="let element" mat-cell style="text-align: end">
+        <button
+        *isInRoles="[roles.Admin]"
+          (click)="edit(element)"
+          color="primary" mat-icon-button>
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+        *isInRoles="[roles.Admin]"
+          (click)="delete(element)"
+          color="warn" mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr *matHeaderRowDef="columns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: columns;" mat-row></tr>
+
+  </table>
+
+  <button
+  *isInRoles="[roles.Admin]"
+    (click)="add()"
+    mat-raised-button
+    color="primary">
+    <mat-icon>add</mat-icon>
+    New Project
+  </button>
+
+</div>
