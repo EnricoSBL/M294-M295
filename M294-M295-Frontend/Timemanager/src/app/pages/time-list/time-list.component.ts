@@ -15,14 +15,14 @@ import { TimeService } from 'src/app/service/time.service';
 export class TimeListComponent implements OnInit{
 
   public timeDataSource = new MatTableDataSource<Time>()
-  public columns = ['employee','department','project','startTime','endTime','comment']
+  public columns = ['employee','department','project','startTime','endTime','comment','actions']
   public roles = AppRoles
 
   constructor (
     private service : TimeService,
     private router : Router,
     private dialog : MatDialog,
-    private snackBar : MatSnackBar
+    private snackBar : MatSnackBar,
   ) {}
 
   ngOnInit(): void {

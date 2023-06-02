@@ -23,7 +23,7 @@
       <th *matHeaderCellDef class="w-75 th-center" mat-header-cell></th>
       <td *matCellDef="let element" mat-cell style="text-align: end">
         <button
-        *isInRoles="[roles.Update]"
+        *isInRoles="[roles.Admin]"
           (click)="edit(element)"
           color="primary" mat-icon-button>
           <mat-icon>edit</mat-icon>

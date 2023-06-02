@@ -4,10 +4,10 @@ import { Project } from "./project"
 
 export class Time {
   public id! : number
-  public employee : Array<Employee> = []
-  public department : Array<Department> = []
-  public projects : Array<Project> = []
+  public employee : Employee = new Employee
+  public department : Department = new Department
+  public projects : Project[] = []
   public startTime : Date = new Date()
   public endTime : Date = new Date()
-  public comment : string = ''
+  public comment  = ''
 }

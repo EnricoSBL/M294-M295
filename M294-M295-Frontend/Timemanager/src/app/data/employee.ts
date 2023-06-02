@@ -1,7 +1,7 @@
 export class Employee {
   public id! : number
-  public firstname : string = ''
-  public lastname : string = ''
+  public firstname  = ''
+  public lastname  = ''
   public age! : number
-  public manager : boolean = false
+  public manager  = false
 }

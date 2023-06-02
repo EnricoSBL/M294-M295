@@ -9,7 +9,7 @@ import { Time } from "../data/time";
 })
 export class TimeService {
 
-  private backendUrl = 'Project';
+  private backendUrl = 'Time';
 
   constructor(private http: HttpClient) { }
 
@@ -19,12 +19,12 @@ export class TimeService {
   public getOne(id: number): Observable<Time> {
     return this.http.get<Time>(environment.backendBaseUrl + this.backendUrl + `/${id}`);
   }
-  public update(Employee: Time): Observable<Time> {
-    return this.http.put<Time>(environment.backendBaseUrl + this.backendUrl + `/${Employee.id}`, Employee);
+  public update(time: Time): Observable<Time> {
+    return this.http.put<Time>(environment.backendBaseUrl + this.backendUrl + `/${time.id}`, time);
   }
 
-  public save(Employee: Time): Observable<Time> {
-    return this.http.post<Time>(environment.backendBaseUrl + this.backendUrl, Employee);
+  public save(time: Time): Observable<Time> {
+    return this.http.post<Time>(environment.backendBaseUrl + this.backendUrl, time);
   }
 
   public delete(id: number): Observable<HttpResponse<string>> {

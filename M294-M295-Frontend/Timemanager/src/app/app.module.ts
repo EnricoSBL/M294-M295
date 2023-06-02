@@ -36,10 +36,11 @@ import { AppAuthGuard } from './guard/app.auth.guard';
 import { AppAuthService } from './service/app.auth.service';
 import { IsInRolesDirective } from './directives/is-in-roles.dir';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatNativeDateModule } from '@angular/material/core';
 
 export const authConfig: AuthConfig = {
-  issuer: 'http://172.17.255.42:8080/realms/ILV',
+  issuer: 'http://localhost:8080/realms/ILV',
   requireHttps: false,
   redirectUri: environment.frontendBaseUrl,
   postLogoutRedirectUri: environment.frontendBaseUrl,
@@ -100,6 +101,8 @@ export function storageFactory(): OAuthStorage {
     MatMenuModule,
     NoopAnimationsModule,
     MatCardModule,
+    MatDatepickerModule,
+    BrowserAnimationsModule,
     MatDatepickerModule,
     MatNativeDateModule,
   ],

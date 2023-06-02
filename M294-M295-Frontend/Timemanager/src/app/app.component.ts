@@ -7,13 +7,17 @@ import { Router, RoutesRecognized } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public pagetitle : string = ''
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  title(_title: any) {
+    throw new Error('Method not implemented.');
+  }
+  public pagetitle  = ''
 
   constructor(private router: Router) {
     this.router.events.subscribe(e => {
       if (e instanceof RoutesRecognized) {
         this.pagetitle = ''
-        let route = e.state.root.firstChild
+        const route = e.state.root.firstChild
         if (route) {
           this.pagetitle = route.data['pagetitle'] || ''
         }

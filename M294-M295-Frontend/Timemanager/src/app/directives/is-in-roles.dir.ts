@@ -4,6 +4,7 @@ import {takeUntil} from 'rxjs/operators';
 import {AppAuthService} from '../service/app.auth.service';
 
 @Directive({
+  // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[isInRoles]'
 })
 export class IsInRolesDirective implements OnInit, OnDestroy {
